@@ -83,40 +83,107 @@ console.log("He obtenido un", calificacion); */
 
 // FORMA 3
 
-    document.querySelector('button').onclick = function validaEdad(){ 
-        const edad = document.getElementById('edad').value;
-        const nombre = document.getElementById('nombre').value;
-        const apellido = document.getElementById('apellido').value;
-        const div = document.createElement('div');
-        const registros = document.querySelector('.registros');
 
-        //let eliminar = registros.removeChild();
-    //    const hijosDiv = registros.children;
-    /* function basura(){
+document.querySelector('button').onclick = function validaEdad() {
+   
+    let edad = document.getElementById('edad').value;
+    let nombre = document.getElementById('nombre');
+    let apellido = document.getElementById('apellido');
+    let div = document.createElement('div');
+    let registros = document.querySelector('.registros');
 
-        registros.removeChild(div);
-    } */
+
+
+  
     
-        if (edad >= 18){
-            registros.appendChild(div);
-            div.innerHTML =  `<button id="tache" onclick="tache()" style="width: 20px;display: block;margin-left:auto;">X</button><span>${nombre} </span> <span>${apellido} </span> <span>${edad}</span>`;
-        } else {
-            alert('Debe ser mayor de edad para registrarse')
-        }
 
-        if (edad >= 18 && edad < 30){
-            div.style = "Background: blue; color: white; border:none";
-         
-        }
-        else if (edad >= 30 && edad < 40){
-            div.style = "Background: orange; color: white; border:none";
-        }
-        else if (edad >= 60){
-            div.style = "Background: green; color: white; border:none";
-        } else {
-            div.style = "Background: black; color: white; border:none";
-        }
+
+    // const edad = "Ir de Compras";
+
+
+    //let edad = 14;
+
+/*     let casos = {
+        mayIg18: function(){
+            edad >= 18
+        },
+        mayIg18Men30: function(){
+            edad >= 18 && edad < 30
+        },
+        mayIg30Men40: function (){
+            edad >= 30 && edad < 40
+        },
+        mayIg60: function(){
+            60
+        },
+
+    } */
+    if (edad >= 18){
+        registros.appendChild(div);
+       
+        div.innerHTML =  `<button class="tache"  style="width: 20px;display: block;margin-left:auto;">X</button><span>${nombre.value} </span> <span>${apellido.value} </span> <span>${edad}</span>`;
+    } else {
+        alert('Debe ser mayor de edad para registrarse')
     }
+    switch (true) {
+        case (edad >= 18 && edad < 30):
+            div.style = "Background: rgb(0 0 255 / 60%);";
+            break;
+        case (edad >= 30 && edad < 40):
+            div.style = "Background: rgb(255 165 0 / 60%);";
+            break;
+        case (edad >= 60):
+            div.style = "Background: rgb(0 128 0 / 60%);";
+            break;
+    }
+
+    let taches = document.querySelectorAll('.tache');
+
+    taches.forEach(function(tache){
+        tache.onclick = function tache(){
+            //this.parentNode.style.display = 'none';
+            this.parentNode.remove();
+        }
+        
+    })
+
+
+
+}
+
+
+
+
+/* taches.onclick = function tache(div) {
+    // div.remove();
+
+     div.style.display = "none";
+ };
+ */
+
+/* 
+    if (edad >= 18){
+        registros.appendChild(div);
+        div.innerHTML =  `<button id="tache" onclick="tache()" style="width: 20px;display: block;margin-left:auto;">X</button><span>${nombre} </span> <span>${apellido} </span> <span>${edad}</span>`;
+    } else {
+        alert('Debe ser mayor de edad para registrarse')
+    }
+
+    if (edad >= 18 && edad < 30){
+        div.style = "Background: rgb(0 0 255 / 60%); color: white; border:none";
+     
+    }
+    else if (edad >= 30 && edad < 40){
+        div.style = "Background: rgb(255 165 0 / 60%); color: white; border:none";
+    }
+    else if (edad >= 60){
+        div.style = "Background: rgb(0 128 0 / 60%); color: white; border:none";
+    } else {
+        div.style = "Background: rgb(0 0 0 / 60%); color: white; border:none";
+    }
+} */
+
+
 
 
 
@@ -130,3 +197,21 @@ console.log("He obtenido un", calificacion); */
 } */
 
 
+
+
+
+
+// VALIDACIONES
+
+
+
+nombre.addEventListener("input", function () {
+    //console.log(event);
+    if (nombre.validity.typeMismatch) {
+      nombre.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
+    } else {
+      nombre.setCustomValidity("");
+
+    }
+  });
+  

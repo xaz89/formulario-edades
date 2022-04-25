@@ -10,34 +10,35 @@
 </head>
 
 <body>
-    <aside class="descripcion">Crear un formulario con 3 inputs: Nombres, apellidos y edad,
-        <br><br>
-        1. Formulario que nos indique si la persona no es mayor de edad no te deja registrar, aparece mensaje "debe ser
-        mayor de edad para registrarse"
-        <br><br>
-        2. Cada persona registrada aparece automáticamente en el DOM, al dar click en el btn "registrarme" y las
-        tarjetas se ordenan alfabéticamente por el nombre.
-        <br><br>
-        3. Si la persona es mayor de 60 años el color de su tarjeta es VERDE, si es menor de 40 años el color de su
-        tarjeta es NARANJA y si es menor a 30 años el color de la tarjeta es AZUL
-    </aside>
-
-    <main>
-        <form action="">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre">
-            <label for="apellido">Apellidos:</label>
-            <input type="text" id="apellido">
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" value="0">
-            <button type="button">Registrarme</button>
-            <button type="reset" value="Reset">Reset</button>
-        </form>
-        <section class="registros">
+   
+    <aside class="descripcion">
+        <div id="demo"></div>
+        
+        Crear un formulario con 3 inputs: Nombres, apellidos y edad,
+          <br><br>
+          1. Formulario que nos indique si la persona no es mayor de edad no te deja registrar, aparece mensaje "debe ser
+          mayor de edad para registrarse"
+          <br><br>
+          2. Cada persona registrada aparece automáticamente en el DOM, al dar click en el btn "registrarme" y las
+          tarjetas se ordenan alfabéticamente por el nombre.
+          <br><br>
+          3. Si la persona es mayor de 60 años el color de su tarjeta es VERDE, si es menor de 40 años el color de su
+          tarjeta es NARANJA y si es menor a 30 años el color de la tarjeta es AZUL
+      </aside>
+  
+      <main>
+          <form action="">
+              <label for="nombre">Nombre:</label>
+              <input type="email" id="nombre" required>
+              <label for="apellido">Apellidos:</label>
+              <input type="text" id="apellido" required>
+              <label for="edad">Edad:</label>
+              <input type="number" id="edad" value="0" min="0" max="100" required>
+              <button type="button">Registrarme</button>
+              <button type="reset" value="Reset">Reset</button>
+          </form>
+          <section class="registros">
     </main>
-
-
-    </section>
 
     <script src="./js/index.js"></script>
 </body>

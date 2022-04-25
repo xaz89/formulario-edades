@@ -1,83 +1,144 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 body{
-  display: grid;
-  place-content: center;
-  place-content: center;
-  display:flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  height: 100vh;
-  width: 100vw;
+display: grid;
+place-content: center;
+place-content: center;
+display:flex;
+justify-content: flex-start;
+align-items: center;
+flex-direction: row;
+height: 100vh;
+width: 100vw;
+
+background-image: url(https://picsum.photos/2000/1000);
 }  
 
-main{
-    width: 70%;
-}
-
 form{
-    position: fixed;
-    z-index: 2;
-    background: white;
-    margin: 0;
-    height: 50px;
-    width: 70%;
-    top: 0;
-    padding-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+position: fixed;
+  z-index: 2;
+  background: white;
+  height: auto;
+  display: block;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+
+ background: rgba(255, 255, 255,     0.2);
+border-radius: 6px;
+box-shadow: 0 4px 30px rgba(0, 0,   0, 0.1);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(9px);
+padding-left: 10px;
+padding-right: 10px;
 }
 
 
 
 form label {
-   margin-bottom: 0px;
+ margin-bottom: 0px;
 }
 
 .registros{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-    height: calc(100vh - 50px);
-    width: 100%;
-    margin-top: 50px;
-    position: relative;
-    overflow: scroll;
-    padding-right: 20px;
-    padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 2fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  height: 100vh;
+  /* width: 100%; */
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 70px;
+  position: relative;
 }
 
 .registros div{
-    border: 1px solid gray;
-    padding: 10px;
-    height: 120px;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  border: 1px solid gray;
+  padding: 10px;
+  height: 120px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+color: white;
+  border: none;
+  background: rgb(0 0 0 / 50%);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(9px);
+
+
 }
 
 .registros div span{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-family: sans-serif;
-    line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: sans-serif;
+  line-height: 1.5;
 }
 
 p{
-  width: 50%;
+width: 50%;
 }
 
 aside{
-  width: 30%;
+width: 25%;
+background: rgba(255, 255, 255,     0.2);
+border-radius: 6px;
+box-shadow: 0 4px 30px rgba(0, 0,   0, 0.1);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(9px);
+padding: 30px;
+}
+
+main{
+  width: 75%;
+}
+
+input{
+border-radius: 3px;
+height: 25px;
+padding-left: 10px;
+padding-right: 10px;
+border: none;
+}
+
+#tache{
+position: absolute;
+right: 10px;
+}
+
+
+
+@media (max-width: 767px) {
+  body{
+    background: blue;
+    flex-direction: column;
+  }
+  aside{
+    width: 90%;
+    position: relative;
+    order: 2;
+    }
+
+    main{
+      width: 100%;
+    position: relative;
+    order: 1;
+    }
+    .registros{
+      width: 100%;
+      height: auto;
+    }
+
 }
