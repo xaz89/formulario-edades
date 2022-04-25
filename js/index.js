@@ -93,7 +93,19 @@ document.querySelector('button').onclick = function validaEdad() {
     let registros = document.querySelector('.registros');
 
 
-
+    nombre.addEventListener("input", function () {
+        //console.log(event);
+        // document.querySelector('body').style.display = "none";
+    
+       
+            if (nombre.validity.typeMismatch) {
+                nombre.setCustomValidity("Agrega un nombre");
+            } else {
+                nombre.setCustomValidity("");
+            }
+       
+        
+      });
   
     
 
@@ -205,13 +217,5 @@ document.querySelector('button').onclick = function validaEdad() {
 
 
 
-nombre.addEventListener("submit", function () {
-    //console.log(event);
-    if (nombre.validity.typeMismatch) {
-      nombre.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
-    } else {
-      nombre.setCustomValidity("");
 
-    }
-  });
   
