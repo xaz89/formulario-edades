@@ -205,7 +205,7 @@ document.querySelector('button').onclick = function validaEdad() {
 
 
 
-nombre.addEventListener("input", function () {
+nombre.addEventListener("submit", function () {
     //console.log(event);
     if (nombre.validity.typeMismatch) {
       nombre.setCustomValidity("¡Se esperaba una dirección de correo electrónico!");
