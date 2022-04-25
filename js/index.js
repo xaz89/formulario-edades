@@ -1,3 +1,8 @@
+
+
+// VALIDACIONES
+
+
 /* // FORMA 1 if
 
 // function programa(){
@@ -84,7 +89,7 @@ console.log("He obtenido un", calificacion); */
 // FORMA 3
 
 
-document.querySelector('button').onclick = function validaEdad() {
+document.querySelector('button').addEventListener("click", function validaEdad() {
    
     let edad = document.getElementById('edad').value;
     let nombre = document.getElementById('nombre');
@@ -93,20 +98,27 @@ document.querySelector('button').onclick = function validaEdad() {
     let registros = document.querySelector('.registros');
 
 
-    nombre.addEventListener("input", function () {
-        //console.log(event);
-        // document.querySelector('body').style.display = "none";
+ 
+
+nombre.addEventListener("input", function () {
+        if (nombre.validity.typeMismatch) {
+            nombre.setCustomValidity("Agrega un nombre");
+        } else {
+            nombre.setCustomValidity("");
+        }
+   
     
-       
-            if (nombre.validity.typeMismatch) {
-                nombre.setCustomValidity("Agrega un nombre");
-            } else {
-                nombre.setCustomValidity("");
-            }
-       
-        
-      });
-  
+  });
+  apellido.addEventListener("input", function () {
+        if (apellido.validity.typeMismatch) {
+            apellido.setCustomValidity("Agrega un apellido");
+        } else {
+            apellido.setCustomValidity("");
+        }
+   
+    
+  });
+
     
 
 
@@ -161,7 +173,7 @@ document.querySelector('button').onclick = function validaEdad() {
 
 
 
-}
+})
 
 
 
@@ -211,11 +223,3 @@ document.querySelector('button').onclick = function validaEdad() {
 
 
 
-
-
-// VALIDACIONES
-
-
-
-
-  
